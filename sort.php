@@ -27,6 +27,8 @@ if($_POST["querysort"]!='')
     <img class="image" src='.$row['featured_image'].'>
     <div class="middle">
     <div class="text">'.$row["description"].'</div>
+    <div class="custom_text">Released On:'.$row["release_date"].'</div>
+    <div class="custom_text">'.$row["movie_length"].'mins</div>
   </div>
     </div>
     ';
@@ -34,7 +36,7 @@ if($_POST["querysort"]!='')
  }
  else
  {
-  echo 'no data found';
+  echo '<img src="img/nodata.png">';
  }
 
   ?>

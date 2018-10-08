@@ -4,33 +4,15 @@
  if($_POST["query"]!='')
  {
   $search_array=explode(",",$_POST["query"]);
+  //print_r($search_array);
   $search_text="'".implode("','",$search_array)."'";
-  if(".$search_text."=='Genre')
-  {
-    $query="select * from movies order by m_id desc";
-  }
+  //echo "alert('$search_text')";
   $query="SELECT * FROM relationship INNER JOIN movies ON relationship.m_id = movies.m_id INNER JOIN category ON relationship.c_id = category.c_id where value=".$search_text."";
  }
  else
  {
  $query="select * from movies order by m_id desc";
 }
-if($_POST["query"]!='')
- {
-  $search_array=explode(",",$_POST["query"]);
-  $search_text="'".implode("','",$search_array)."'";
-  if(".$search_text."=='lang')
-  {
-    $query="select * from movies order by m_id desc";
-  }
-  $query="SELECT * FROM relationship INNER JOIN movies ON relationship.m_id = movies.m_id INNER JOIN category ON relationship.c_id = category.c_id where value=".$search_text."";
- }
- else
- {
- $query="select * from movies order by m_id desc";
-}
-
-
  $statement=$connect->prepare($query);
  $statement->execute();
  $result=$statement->fetchAll();

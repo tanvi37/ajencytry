@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2018 at 09:03 PM
+-- Generation Time: Oct 08, 2018 at 07:28 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -94,9 +94,11 @@ CREATE TABLE `relationship` (
 INSERT INTO `relationship` (`r_id`, `c_id`, `m_id`) VALUES
 (1, 1, 4),
 (2, 1, 9),
-(3, 5, 7),
-(4, 6, 11),
-(5, 2, 6);
+(3, 6, 11),
+(4, 2, 6),
+(5, 6, 9),
+(6, 4, 8),
+(8, 3, 7);
 
 --
 -- Indexes for dumped tables
@@ -128,19 +130,19 @@ ALTER TABLE `relationship`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `c_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `c_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `m_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `m_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `relationship`
 --
 ALTER TABLE `relationship`
-  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `r_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

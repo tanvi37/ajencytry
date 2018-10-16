@@ -8,7 +8,9 @@
   $search_text="'".implode("','",$search_array)."'";
   //echo "alert('$search_text')";
   $query="SELECT * FROM relationship INNER JOIN movies ON relationship.m_id = movies.m_id INNER JOIN category ON relationship.c_id = category.c_id where value=".$search_text."";
+  //$query="SELECT * FROM relationship INNER JOIN movies ON relationship.m_id = movies.m_id INNER JOIN category ON relationship.c_id = category.c_id where value IN ('Comedy') AND relationship.m_id IN (SELECT relationship.m_id FROM relationship INNER JOIN movies ON relationship.m_id = movies.m_id INNER JOIN category ON relationship.c_id = category.c_id where value IN ('Hindi') ) ORDER BY movie_length ASC, release_date ASC";
  }
+
  else
  {
  $query="select * from movies order by m_id desc";
